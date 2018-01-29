@@ -1,0 +1,9 @@
+[user]
+	name = First Last
+	email = email@email.com
+[github]
+	user = username
+[core]
+	editor = editor
+[credential]
+	helper = osxkeychain
