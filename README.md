@@ -68,7 +68,7 @@ defaults write com.apple.finder ShowStatusBar -bool true
 I use my custom profile called "Flat".
 
 ```shell
-$ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/Custom.terminal
+curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/Custom.terminal
 ```
 
 To use it as default profile just open downloaded `Custom.terminal` file and click **Shell** > **Use settings as default**.
@@ -79,7 +79,7 @@ In my `.bash_profile` file I create a simple script to keep Homebrew (which we a
 
 ```shell
 cd ~
-$ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/.bash_profile
+curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/.bash_profile
 source ~/.bash_profile
 ```
 
@@ -108,7 +108,7 @@ Installing each package separately may take some time. That's why I use [Homebre
 To download my `Brewfile` file simply type
 
 ```shell
-$ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/Brewfile
+curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/Brewfile
 ```
 
 Here are all the programs I install with a brief description. You can choose to add or subtract any programs you’d like. They’re all free.
@@ -180,7 +180,7 @@ You can do it faster by creating the Git configuration file and input it all our
 
 ```shell
 cd ~
-$ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/.gitconfig
+curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/.gitconfig
 open .gitconfig
 ```
 
@@ -234,7 +234,7 @@ npm install --global gulp-cli
 
 ```shell
 cd /Users/Your Username/Library/Application Support/Code/User
-$ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/settings.json
+curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/settings.json
 ```
 
 ```json
