@@ -68,10 +68,10 @@ defaults write com.apple.finder ShowStatusBar -bool true
 I use my custom profile called "Flat".
 
 ```shell
-curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/Custom.terminal
+curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/Flat.terminal
 ```
 
-To use it as default profile just open downloaded `Custom.terminal` file and click **Shell** > **Use settings as default**.
+To use it as default profile just open downloaded `Flat.terminal` file and click **Shell** > **Use settings as default**.
 
 ## Bash
 
