@@ -1,4 +1,4 @@
-# My Front End Web Development Setup for macOS
+# Front End Web Development Setup for macOS
 
 This document describes how I set up front end web development environment on my MacBook Air with macOS High Sierra 10.13.3.
 
@@ -13,17 +13,15 @@ This document describes how I set up front end web development environment on my
 
 ## System Preferences
 
-After "clean" install of operating system, there are a couple tweaks I like to make to the System Preferences. Feel free to follow these, or to ignore them, depending on your personal preferences.
+After clean install of operating system, there are a couple tweaks I like to make to the System Preferences. Some of them are not strictly related to web development enviroment - I use them because of my personal habits.
+
 
 - General > User dark menu bar and Dock
 - General > Ask to keep changes when closing documents
 - General > Close windows when quitting an app
-- General > Recent itemss > none?
 - Dock > Automatically hide and show the Dock
-- Desktop & Screen Saver > Screen Saver > Start after > Never
 - Keyboard > Key Repeat > Fast (all the way to the right)
 - Keyboard > Delay Until Repeat > Short (all the way to the right)
-
 
 ### Set Dock size
 
@@ -38,6 +36,8 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 ```
 
 ### Reset icons in Launchpad
+
+I usually use this command after installing every application that I need - it keeps Apple applications on the first page and moves the rest to the next pages.
 
 ```shell
 defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
@@ -57,7 +57,7 @@ defaults write com.apple.finder AppleShowAllFiles YES
 defaults write com.apple.finder ShowPathbar -bool true
 ```
 
-### Show status bar in finder
+### Show status bar in Finder
 
 ```shell
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -65,17 +65,40 @@ defaults write com.apple.finder ShowStatusBar -bool true
 
 ## Terminal
 
-I use my custom profile called "Flat".
+I use my custom Terminal profile called **Flat**. You can download it by typing:
 
 ```shell
 curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/Flat.terminal
 ```
 
-To use it as default profile just open downloaded `Flat.terminal` file and click **Shell** > **Use settings as default**.
+To use it as default profile open downloaded `Flat.terminal` file and click **Shell** > **Use settings as default** option.
 
 ## Bash
 
-In my `.bash_profile` file I create a simple script to keep Homebrew (which we are going to install in a second) up to date, remove bash history, color scheme for `ls` command output and custom prompt which contains username, computer name, working directory and current Git branch.
+```shell
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor; brew cask cleanup'
+alias rmhis='rm .bash_history; history -c; logout'
+
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+RED='\[\033[1;31m\]'
+GREEN='\[\033[1;32m\]'
+YELLOW='\[\033[1;33m\]'
+PURPLE='\[\033[1;35m\]'
+GRAY='\[\033[1;30m\]'
+DEFAULT='\[\033[0m\]'
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+export PS1="${RED}\u ${GRAY}• ${GREEN}\h ${GRAY}• ${YELLOW}\w${GRAY}\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on\")${PURPLE}\$(parse_git_branch)\n${GRAY}\$ ${DEFAULT}"
+```
+
+In my `.bash_profile` file I create a `brewup` alias to keep Homebrew (which we are going to install in a second) up to date and `rmhis` to remove bash history. I also set color scheme for `ls` command output and for custom prompt which contains username, computer name, working directory and current Git branch.
+
+To download `.bash_profile` and execute its content, use:
 
 ```shell
 cd ~
@@ -85,7 +108,7 @@ source ~/.bash_profile
 
 ## Homebrew
 
-Installing the [Homebrew](http://brew.sh/) package manager will allow you to install almost any app from the command line.
+[Homebrew](http://brew.sh/) package manager allows to install almost any app right from the command line.
 
 ### Installation
 
@@ -93,39 +116,25 @@ Installing the [Homebrew](http://brew.sh/) package manager will allow you to ins
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-### Usage
-
-To install a package (or **Formula** in Homebrew vocabulary) simply type
-
-```shell
-brew install <formula>
-```
-
 ### Brewfile
 
-Installing each package separately may take some time. That's why I use [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle), which allows You to automatically install all packages and applications listed in the `Brewfile` file.
+Installing each package separately may take some time. That's why I use [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle), which allows to automatically install all packages and applications listed in the `Brewfile` file.
 
-To download my `Brewfile` file simply type
+Here are all the programs I install with a brief description.
 
-```shell
-curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/Brewfile
-```
-
-Here are all the programs I install with a brief description. You can choose to add or subtract any programs you’d like. They’re all free.
-
-- [Cask](https://caskroom.github.io) - an extension to Homebrew that will allow you to install almost any program that exists for a Mac.
+- [Cask](https://caskroom.github.io) - an extension to Homebrew which allows to install almost any program that exists for a Mac
 - [Git](https://git-scm.com) - for version control
-- [mas-cli](https://github.com/mas-cli/mas) - Mac App Store command line interface will allow you to install from the App Store.
-- [AppCleaner](https://freemacsoft.net/appcleaner/) - uninstall unwanted apps
+- [mas-cli](https://github.com/mas-cli/mas) - Mac App Store command line interface
+- [AppCleaner](https://freemacsoft.net/appcleaner/) - uninstall apps
 - [Filezilla](https://filezilla-project.org) - FTP client
 - [Firefox](https://www.mozilla.org/firefox/new/) - web browser
-- [Flux](https://justgetflux.com) - better (in my opinion) Night Shift for your Mac
+- [Flux](https://justgetflux.com) - better Night Shift
 - [Google Chrome](https://www.google.pl/chrome/browser/desktop/index.html) - web browser
-- [KeepingYouAwake](https://github.com/newmarcel/KeepingYouAwake) - prevent your Mac from entering sleep mode
+- [KeepingYouAwake](https://github.com/newmarcel/KeepingYouAwake) - prevent Mac from entering sleep mode
 - [Keka](http://www.kekaosx.com) - file archiver
 - [MAMP](https://www.mamp.info/en/) - Apache, MySQL and PHP package
 - [Opera](http://www.opera.com) - web browser
-- [Sequel Pro](http://www.sequelpro.com) - excellent free GUI for MySQL databases
+- [Sequel Pro](http://www.sequelpro.com) - GUI for MySQL databases
 - [Spectacle](https://www.spectacleapp.com) - easily move and resize windows
 - [Transmission](https://transmissionbt.com) - BitTorrent client
 - [Visual Studio Code](https://code.visualstudio.com) - code editor
@@ -162,29 +171,42 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 ```
 
-To install all programs, all You have to do is simply type
+To check App Store application's IDs use:
+
+```shell
+mas search <app name>
+```
+
+To download my `Brewfile` file type:
+
+```shell
+curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/Brewfile
+```
+
+To install listed applications use:
 
 ```shell
 brew bundle
 ```
 
+in directory that contains `Brewfile` file.
+
 ## Git
 
-To set Git global configuration You can run commands which will update the Git configuration file, e.g.
+You can set Git global configuration two ways. The first is to run bunch of commands which will update the Git configuration file, e.g.
 
 ```shell
 git config --global user.name "First Last"
+git config --global user.email "email@email.com"
 ```
 
-You can do it faster by creating the Git configuration file and input it all ourselves.
+The other and faster way is creating the Git configuration file and input it all ourselves.
 
 ```shell
 cd ~
 curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/.gitconfig
 open .gitconfig
 ```
-
-Here I set my name, email, GitHub username, core editor and connect Git to the OS X Keychain so I don’t have to type my username and password every time I want to push to GitHub.
 
 ```properties
 [user]
@@ -198,21 +220,23 @@ Here I set my name, email, GitHub username, core editor and connect Git to the O
   helper = osxkeychain
 ```
 
+Here I set my name, email, GitHub username, core editor and connect Git to the macOS Keychain so I don’t have to type my username and password every time I want to push to GitHub.
+
 ## Node.js
 
-To install  Node.js i like to use [Node Version Manager](https://github.com/creationix/nvm).
+For installation of Node.js I like to use [Node Version Manager](https://github.com/creationix/nvm) (nvm). To download it type:
 
 ```shell
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 ```
 
-List all available versions on Node.js
+You can check all available Node.js versions by:
 
 ```shell
 nvm list-remote
 ```
 
-Install chosen version
+To install specific version type:
 
 ```shell
 nvm install <version>
@@ -220,11 +244,11 @@ nvm install <version>
 
 ## Node Package Manager
 
-I mostly use npm locally for projects. The only thing I use globally at the moment is [Gulp](https://gulpjs.com).
+The only thing I use globally at the moment is [Gulp](https://gulpjs.com).
 
 ### Gulp
 
-Install Gulp globally
+To install Gulp globally use:
 
 ```shell
 npm install --global gulp-cli
@@ -232,10 +256,7 @@ npm install --global gulp-cli
 
 ## Visual Studio Code
 
-```shell
-cd /Users/Your Username/Library/Application Support/Code/User
-curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/settings.json
-```
+All settings changes in Visual Studio Code are stored in `settings.json` file.
 
 ```json
 {
@@ -249,6 +270,13 @@ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/setting
   "explorer.openEditors.visible": 0,
   "files.insertFinalNewline": true
 }
+```
+
+You can copy and paste them or just download whole file by:
+
+```shell
+cd /Users/Your Username/Library/Application Support/Code/User
+curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/settings.json
 ```
 
 ### Extensions
