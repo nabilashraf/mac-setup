@@ -260,15 +260,16 @@ All settings changes in Visual Studio Code are stored in `settings.json` file.
 
 ```json
 {
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Monokai",
-  "editor.fontSize": 12,
-  "editor.tabSize": 2,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.minimap.enabled": false,
-  "workbench.activityBar.visible": false,
-  "explorer.openEditors.visible": 0,
-  "files.insertFinalNewline": true
+	"workbench.startupEditor": "newUntitledFile",
+	"workbench.colorTheme": "Monokai",
+	"editor.fontSize": 12,
+	"editor.tabSize": 2,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.minimap.enabled": false,
+	"workbench.activityBar.visible": false,
+	"explorer.openEditors.visible": 0,
+	"files.insertFinalNewline": true,
+	"html.autoClosingTags": false,
 }
 ```
 
