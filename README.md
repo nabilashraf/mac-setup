@@ -135,6 +135,7 @@ Here are all the programs I install with a brief description.
 - [MAMP](https://www.mamp.info/en/) - Apache, MySQL and PHP package
 - [Opera](http://www.opera.com) - web browser
 - [Sequel Pro](http://www.sequelpro.com) - GUI for MySQL databases
+- [Skype](https://www.skype.com) - voice and video chat
 - [Spectacle](https://www.spectacleapp.com) - easily move and resize windows
 - [Transmission](https://transmissionbt.com) - BitTorrent client
 - [Visual Studio Code](https://code.visualstudio.com) - code editor
@@ -161,6 +162,7 @@ cask 'keka'
 cask 'mamp'
 cask 'opera'
 cask 'sequel-pro'
+cask 'skype'
 cask 'spectacle'
 cask 'transmission'
 cask 'visual-studio-code'
