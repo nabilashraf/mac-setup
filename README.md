@@ -272,7 +272,48 @@ All settings changes in Visual Studio Code are stored in `settings.json` file.
   "explorer.openEditors.visible": 0,
   "files.insertFinalNewline": true,
   "html.autoClosingTags": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules/": true,
+    "**/.vscode/": true
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.folders.color": "#42a5f5",
+  "todohighlight.keywords": [
+    {
+      "text": "TODO:",
+      "color": "black",
+      "backgroundColor": "yellow",
+      "overviewRulerColor": "yellow"
+    },
+    {
+      "text": "FIXME:",
+      "color": "white",
+      "backgroundColor": "red",
+      "overviewRulerColor": "yellow"
+    }
+  ],
+  "todohighlight.exclude": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/public/**",
+    "**/.vscode/**",
+    "**/.github/**",
+    "**/_output/**",
+    "**/*.min.*",
+    "**/*.map",
+    "**/.next/**",
+  ],
+  "todohighlight.isEnable": true
 }
+
 ```
 
 You can copy and paste them or just download whole file by:
@@ -284,4 +325,10 @@ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/setting
 
 ### Extensions
 
-For now I only use [SCSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) extension.
+- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag) - automatically rename paired HTML tag
+- [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) - debug JavaScript code in the Google Chrome browser,
+- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) - icons based on Material Design
+- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) -  autocomplete filenames
+- [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) - manage projects right inside Visual Studio Code
+- [SCSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) - autocomplete variables, mixins, functions and many other
+- [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) - highlight and list TODO, FIXME or any annotations within code

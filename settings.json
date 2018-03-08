@@ -1,12 +1,52 @@
 {
-	"workbench.startupEditor": "newUntitledFile",
-	"workbench.colorTheme": "Monokai",
-	"editor.fontSize": 12,
-	"editor.tabSize": 2,
-	"editor.multiCursorModifier": "ctrlCmd",
-	"editor.minimap.enabled": false,
-	"workbench.activityBar.visible": false,
-	"explorer.openEditors.visible": 0,
-	"files.insertFinalNewline": true,
-	"html.autoClosingTags": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Monokai",
+  "editor.fontSize": 12,
+  "editor.tabSize": 2,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.visible": false,
+  "explorer.openEditors.visible": 0,
+  "files.insertFinalNewline": true,
+  "html.autoClosingTags": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules/": true,
+    "**/.vscode/": true
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.folders.color": "#42a5f5",
+  "todohighlight.keywords": [
+    {
+      "text": "TODO:",
+      "color": "black",
+      "backgroundColor": "yellow",
+      "overviewRulerColor": "yellow"
+    },
+    {
+      "text": "FIXME:",
+      "color": "white",
+      "backgroundColor": "red",
+      "overviewRulerColor": "yellow"
+    }
+  ],
+  "todohighlight.exclude": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.vscode/**",
+    "**/.github/**",
+    "**/_output/**",
+    "**/*.min.*",
+    "**/*.map",
+    "**/.next/**",
+    "**/bundle.js"
+  ],
+  "todohighlight.isEnable": true
 }
