@@ -264,26 +264,28 @@ All settings changes in Visual Studio Code are stored in `settings.json` file.
 {
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Monokai",
+  "workbench.activityBar.visible": false,
+  "workbench.iconTheme": "material-icon-theme",
+  
   "editor.fontSize": 12,
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.minimap.enabled": false,
-  "workbench.activityBar.visible": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.formatOnPaste": true,
+  
   "explorer.openEditors.visible": 0,
   "files.insertFinalNewline": true,
   "html.autoClosingTags": false,
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/node_modules/": true,
-    "**/.vscode/": true
+    "**/node_modules/**": true,
+    "**/.vscode/**": true,
   },
-  "workbench.iconTheme": "material-icon-theme",
+
   "material-icon-theme.folders.theme": "classic",
   "material-icon-theme.folders.color": "#42a5f5",
+
+  "todohighlight.isEnable": true,
   "todohighlight.keywords": [
     {
       "text": "TODO:",
@@ -295,25 +297,13 @@ All settings changes in Visual Studio Code are stored in `settings.json` file.
       "text": "FIXME:",
       "color": "white",
       "backgroundColor": "red",
-      "overviewRulerColor": "yellow"
+      "overviewRulerColor": "red"
     }
   ],
   "todohighlight.exclude": [
-    "**/node_modules/**",
-    "**/bower_components/**",
-    "**/dist/**",
-    "**/build/**",
-    "**/public/**",
-    "**/.vscode/**",
-    "**/.github/**",
-    "**/_output/**",
-    "**/*.min.*",
-    "**/*.map",
-    "**/.next/**",
-  ],
-  "todohighlight.isEnable": true
+    "**/public/**"
+  ]
 }
-
 ```
 
 You can copy and paste them or just download whole file by:
