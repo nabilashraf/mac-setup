@@ -13,11 +13,10 @@
   "files.insertFinalNewline": true,
   "html.autoClosingTags": false,
   "files.exclude": {
-    "**/node_modules/**": true,
-    "**/.vscode/**": true,
+    "**/node_modules/": true,
+    "**/.vscode/": true,
   },
-  "material-icon-theme.folders.theme": "classic",
-  "material-icon-theme.folders.color": "#42a5f5",
+  "material-icon-theme.folders.theme": "none",
   "todohighlight.isEnable": true,
   "todohighlight.keywords": [
     {
@@ -34,6 +33,6 @@
     }
   ],
   "todohighlight.exclude": [
-    "**/public/**"
+    "**/public/"
   ]
 }
