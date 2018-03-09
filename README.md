@@ -266,25 +266,20 @@ All settings changes in Visual Studio Code are stored in `settings.json` file.
   "workbench.colorTheme": "Monokai",
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": "material-icon-theme",
-  
   "editor.fontSize": 12,
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.minimap.enabled": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.formatOnPaste": true,
-  
   "explorer.openEditors.visible": 0,
   "files.insertFinalNewline": true,
   "html.autoClosingTags": false,
   "files.exclude": {
-    "**/node_modules/**": true,
-    "**/.vscode/**": true,
+    "**/node_modules/": true,
+    "**/.vscode/": true,
   },
-
-  "material-icon-theme.folders.theme": "classic",
-  "material-icon-theme.folders.color": "#42a5f5",
-
+  "material-icon-theme.folders.theme": "none",
   "todohighlight.isEnable": true,
   "todohighlight.keywords": [
     {
@@ -301,7 +296,7 @@ All settings changes in Visual Studio Code are stored in `settings.json` file.
     }
   ],
   "todohighlight.exclude": [
-    "**/public/**"
+    "**/public/"
   ]
 }
 ```
@@ -316,8 +311,9 @@ curl -O https://raw.githubusercontent.com/appalaszynski/mac-setup/master/setting
 ### Extensions
 
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag) - automatically rename paired HTML tag
-- [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) - debug JavaScript code in the Google Chrome browser,
+- [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) - debug JavaScript code in the Google Chrome browser
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) - icons based on Material Design
+- [open in browser](https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser) - open any file in specific browser right from VS Code explorer
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) -  autocomplete filenames
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) - manage projects right inside Visual Studio Code
 - [SCSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) - autocomplete variables, mixins, functions and many other
