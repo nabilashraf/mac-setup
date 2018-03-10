@@ -11,6 +11,7 @@ This document describes how I set up front end web development environment on my
 - [Git](#git)
 - [Node.js](#nodejs)
 - [Node Package Manager](#node-package-manager)
+- [Web Browsers](#web-browsers)
 - [Visual Studio Code](#visual-studio-code)
 
 ## System Preferences
@@ -257,6 +258,24 @@ To install Gulp globally use:
 ```shell
 npm install --global gulp-cli
 ```
+
+## Web Browsers
+
+Currently I have installed all major web browsers:
+
+- [Chrome](https://www.google.com/chrome/)
+- [Safari](https://www.apple.com/safari/)
+- [Opera](https://www.opera.com/)
+- [Firefox](https://www.mozilla.org/en-US/firefox/)
+
+For main development I use Google Chrome.
+
+### Chrome extensions
+
+- [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) - block ads
+- [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) - validate and view JSON documents
+- [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) - inspect component hierarchies and states
+- [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) - debug state changes
 
 ## Visual Studio Code
 
