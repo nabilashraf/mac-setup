@@ -1,3 +1,5 @@
+<p align="center"><img src="https://user-images.githubusercontent.com/35331661/37242209-c5d740cc-2465-11e8-92b3-e6d786e98dda.jpg" width="100px"></p>
+
 # Front End Web Development Setup for macOS
 
 This document describes how I set up front end web development environment on my MacBook Air with macOS High Sierra 10.13.3.
